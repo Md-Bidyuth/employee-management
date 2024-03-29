@@ -5,6 +5,14 @@ $obj = new EmployeeController;
 
 $employees = $obj->index();
 
+if(isset($_GET['status'])) {
+    if($_GET['status'] == "delete") {
+        $id = $_GET['id'];
+
+       $obj->delete($id);
+    }
+}
+
 ?>
 
 <div class="card my-4 px-0 container">
@@ -49,7 +57,7 @@ $employees = $obj->index();
                 
                 <td>
                     <a href="./edit.php?status=edit&&id=<?php echo $employee['id'] ?>" class="btn btn-primary btn-sm">Edit</a>
-                    <button class="btn btn-danger btn-sm">Delete</button>
+                    <a href="?status=delete&&id=<?php echo $employee['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
            

@@ -10,17 +10,22 @@ if(isset($_GET['status'])) {
         $employee = $obj->edit($id);
     }
 }
+
+if(isset($_POST['updateEmp'])) {
+    $obj->update($_POST);
+}
 ?>
 
 <div class="card my-4 px-0 container">
 
 <div class="card-header">
-    <h3>Edit: Mamun</h3>
+    <h3>Edit the info of <span style="color:#00A9FF"><?php echo $employee['name'] ?></span></h3>
 </div>
 
 <div class="card-body">
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $employee['id'] ?>">
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input class="form-control" type="text" name="name" value="<?php echo $employee['name'] ?>">

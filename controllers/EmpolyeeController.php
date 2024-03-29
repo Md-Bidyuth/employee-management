@@ -30,7 +30,7 @@ class EmployeeController extends ConnectionController
         $query = "INSERT INTO emlpoyees1(name, image, designation, salary, status) VALUE('$name', '$image', '$designation', '$salary', '$status')";
         if(mysqli_query($this->conn, $query)) {
             move_uploaded_file($imgTempName, 'uploads/' . $image);
-            // header('location: index.php');
+            header('location: index.php');
             return "info added successfully";
         }
         

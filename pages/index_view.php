@@ -49,7 +49,7 @@ if(isset($_GET['status'])) {
                     <span class="badge bg-success">active</span>
                     
                     <?php } else { ?>
-                    <span class="badge bg-warning">inactive</span>  
+                    <span class="badge bg-dark">inactive</span>  
                     
                     <?php } ?>
                 
